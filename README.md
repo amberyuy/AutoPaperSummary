@@ -1,11 +1,18 @@
 # Project:Automatic Paper Summary
 ![paper summary](https://s3-ap-south-1.amazonaws.com/av-blog-media/wp-content/uploads/2018/10/image_1.png)
 
-### Product Statement: 
+## Product Statement: 
 Text summarization is the problem of creating a short, accurate, and fluent summary of a longer text document.
-This is an [Introduction to text summary](https://machinelearningmastery.com/gentle-introduction-text-summarization/)
+Here is an [Introduction to text summary](https://machinelearningmastery.com/gentle-introduction-text-summarization/)
 
-There are mainly two ways to make the summary. Extractive and Abstractive.
+## Basic approach:
+Text summarization can broadly be divided into two categories — **Extractive Summarization** and **Abstractive Summarization**
+### Extractive Summarization:
+These methods rely on extracting several parts, such as phrases and sentences, from a piece of text and stack them together to create a summary. Therefore, identifying the right sentences for summarization is of utmost importance in an extractive method.
+### Abstractive Summarization:
+These methods use advanced NLP techniques to generate an entirely new summary. Some parts of this summary may not even appear in the original text.
+
+
 ## Extractive (Sprint 2)
   Select relevant phrases of the input document and concatenate them to form a summary (like "copy-and-paste").
 TextRank is the typical graph based method. For information about the TextRank, https://www.analyticsvidhya.com/blog/2018/11/introduction-text-summarization-textrank-python/
