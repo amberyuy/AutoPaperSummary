@@ -3,7 +3,7 @@
 
 ### Product Statement: 
 Text summarization is the problem of creating a short, accurate, and fluent summary of a longer text document.
-For more introductions about text summarization, https://machinelearningmastery.com/gentle-introduction-text-summarization/
+This is an [Introduction to text summary](https://machinelearningmastery.com/gentle-introduction-text-summarization/)
 
 There are mainly two ways to make the summary. Extractive and Abstractive.
 ## Extractive (Sprint 2)
