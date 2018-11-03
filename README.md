@@ -1,4 +1,7 @@
 # Project:Automatic Paper Summary
+![paper summary](https://s3-ap-south-1.amazonaws.com/av-blog-media/wp-content/uploads/2018/10/image_1.png)
+
+###Product Statement: 
 Text summarization is the problem of creating a short, accurate, and fluent summary of a longer text document.
 For more introductions about text summarization, https://machinelearningmastery.com/gentle-introduction-text-summarization/
 
