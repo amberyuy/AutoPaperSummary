@@ -13,18 +13,20 @@ Text summarization can broadly be divided into two categories — **Extractive S
   * Cons: they lack in flexibility since they cannot use novel words or connectors. They also cannot paraphrase like people sometimes do
 
 #### <font color=#00ffff> TextRank </font>
-**[TextRank](https://web.eecs.umich.edu/~mihalcea/papers/mihalcea.emnlp04.pdf)** is based on PageRank algorithm that is used on Google Search Engine. Its base concept is "The linked page is good, much more if it from many linked page". In TextRank, article is divided into basic text units, i.e., words or phrases. As treated as webpage in PageRank, text unit maps to vertex in graph, and edge between vertexes refers to the link between text units.
-The Classic TextRank algorithm workflow is as below:
-![TextRank](/Users/mac/Desktop/1.jpg)
+**[TextRank](https://web.eecs.umich.edu/~mihalcea/papers/mihalcea.emnlp04.pdf)** is based on [PageRank](https://en.wikipedia.org/wiki/PageRank) algorithm that is used on Google Search Engine. Its base concept is "The linked page is good, much more if it from many linked page". In TextRank, article is divided into basic text units, i.e., words or phrases. As treated as webpage in PageRank, text unit maps to vertex in graph, and edge between vertexes refers to the link between text units.
+The Classic PageRank algorithm workflow is as below:
+![PageRank](https://github.com/icoxfog417/awesome-text-summarization/raw/master/images/page_rank.png)
 
 #### Usage
 * Files:
-  * The code of TextRank is Summary.py，you can run this code this code.
+  * Summary.py: The code of TextRank,you can run this code to test.
   * textrank.extract_sentences() is used to get summary of the file
   * textrank.extract_key_phrases() is used to get keywords of the file
 * Pre-req
   * install python3
   * install TensorFlow1.10,numpy,pandas,nltk
+
+
 
 
 ### Abstractive Summarization
@@ -33,33 +35,30 @@ The Classic TextRank algorithm workflow is as below:
   * Cons: But it is also a much harder problem as you now require the model to generate coherent phrases and connectors.
 
 #### Sequence-to-Sequence with Attention Model for Text Summarization
-To build our model,we will use a two-layered bidirectional RNN with LSTMs on the input data for the encoder layer and two layers, each with an LSTM using bahdanau attention on the target data for the decoder.This model is based on Xin Pan’s and Peter Liu’s model[(Github)](https://github.com/tensorflow/models/tree/master/research/textsum).Here is a good [paper](https://towardsdatascience.com/text-summarization-with-amazon-reviews-41801c2210b) for this model and explains parts of the codes in detail.
+To build our model,we will use a two-layered bidirectional RNN with LSTMs on the input data for the encoder layer and two layers, each with an LSTM using attention on the target data for the decoder.This model is based on Xin Pan’s and Peter Liu’s model[(Github)](https://github.com/tensorflow/models/tree/master/research/textsum).Here is a good [article](https://towardsdatascience.com/text-summarization-with-amazon-reviews-41801c2210b) for this model and explains parts of the codes in detail.
 
 #### Technology Selection
+* Word Embedding
+
+[Word2vec](https://en.wikipedia.org/wiki/Word2vec) algorithm [skipgram](http://mccormickml.com/2016/04/19/word2vec-tutorial-the-skip-gram-model/) is used for the encoder input sequence.Word2vec takes as its input a large corpus of text and produces a vector space, typically of several hundred dimensions, with each unique word in the corpus being assigned a corresponding vector in the space. Word vectors are positioned in the vector space such that words that share common contexts in the corpus are located in close proximity to one another in the space
+![word2vec](https://github.com/DeepsMoseli/Bidirectiona-LSTM-for-text-summarization-/raw/master/skip-gram.jpg)
 * Encoder-Decoder Model
   * Encoder: The encoder is responsible for stepping through the input time steps and encoding the entire sequence into a fixed length vector called a context vector.
   * Decoder: The decoder is responsible for stepping through the output time steps while reading from the context vector.
+![Encoder-Decoder](https://cdn-images-1.medium.com/max/1585/1*sO-SP58T4brE9EHazHSeGA.png)
 
 * Recurrent Neural Networks(RNN) with LSTM
-  * RNN
-  * LSTM
-* Attention Model
+  * [RNN](https://en.wikipedia.org/wiki/Recurrent_neural_network):RNN performs the same task for every element of a sequence, with the output being depended on the previous computations,and they have a “memory” which captures information about what has been calculated so far.
+![RNN model](http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/RNN-unrolled.png)
+  * [LSTM](https://en.wikipedia.org/wiki/Long_short-term_memory):An RNN composed of LSTM units is often called an LSTM network. A common LSTM unit is composed of a cell, an input gate, an output gate and a forget gate. The cell remembers values over arbitrary time intervals and the three gates regulate the flow of information into and out of the cell.This [article](http://colah.github.io/posts/2015-08-Understanding-LSTMs/) can help you better understand LSTM
+![LSTM model](http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/LSTM3-chain.png)
+* [Attention Model](https://blog.heuritech.com/2016/01/20/attention-mechanism/)
 
-![Encoder-Decoder](https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2017/08/Encoder-Decoder-Recurrent-Neural-Network-Model.png)
+it proposed as a solution to the limitation of the Encoder-Decoder model encoding the input sequence to one fixed length vector from which to decode each output time step. It is proposed as a solution to the limitation of the Encoder-Decoder model encoding the input sequence to one fixed length vector from which to decode each output time step.
+![attention layer](https://github.com/DeepsMoseli/Bidirectiona-LSTM-for-text-summarization-/raw/master/BiEnDeLstmAttention.jpg)
 
+#### Dataset
+we use the reviews written about fine foods sold on Amazon. This dataset contains above 500,000 reviews, and is hosted on [Kaggle](https://www.kaggle.com/snap/amazon-fine-food-reviews/data)
 
-
-#### Attention Model
-* **Attention** is proposed as a solution to the limitation of the Encoder-Decoder model encoding the input sequence to one fixed length vector from which to decode each output time step. It is proposed as a solution to the limitation of the Encoder-Decoder model encoding the input sequence to one fixed length vector from which to decode each output time step. 
-
-![Attention Model](https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2017/08/Example-of-Attention.png)
-
-
-
-## Abstractive (Sprint 3)
-  Generate a summary that keeps original intent. It's just like humans do.Based on the paper,“ A Review on Automatic Text Summarization Approaches ” https://thescipub.com/PDF/jcssp.2016.178.190.pdf, we choose to use RNN and CNN as our model.The code is in …,for details of the codes,you can read this paper.https://towardsdatascience.com/text-summarization-with-amazon-reviews-41801c2210b
-
-  Dataset we use is Amazon Reviews Data:
-  
-  Review.csv(https://www.kaggle.com/snap/amazon-fine-food-reviews/data)
+#### Usage
 
