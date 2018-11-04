@@ -39,8 +39,7 @@ To build our model,we will use a two-layered bidirectional RNN with LSTMs on the
 
 #### Technology Selection
 * Word Embedding
-
-[Word2vec](https://en.wikipedia.org/wiki/Word2vec) algorithm [skipgram](http://mccormickml.com/2016/04/19/word2vec-tutorial-the-skip-gram-model/) is used for the encoder input sequence.Word2vec takes as its input a large corpus of text and produces a vector space, typically of several hundred dimensions, with each unique word in the corpus being assigned a corresponding vector in the space. Word vectors are positioned in the vector space such that words that share common contexts in the corpus are located in close proximity to one another in the space
+  * [Word2vec](https://en.wikipedia.org/wiki/Word2vec) algorithm [skipgram](http://mccormickml.com/2016/04/19/word2vec-tutorial-the-skip-gram-model/) is used for the encoder input sequence.Word2vec takes as its input a large corpus of text and produces a vector space, typically of several hundred dimensions, with each unique word in the corpus being assigned a corresponding vector in the space. Word vectors are positioned in the vector space such that words that share common contexts in the corpus are located in close proximity to one another in the space
 ![word2vec](https://github.com/DeepsMoseli/Bidirectiona-LSTM-for-text-summarization-/raw/master/skip-gram.jpg)
 * Encoder-Decoder Model
   * Encoder: The encoder is responsible for stepping through the input time steps and encoding the entire sequence into a fixed length vector called a context vector.
@@ -53,12 +52,11 @@ To build our model,we will use a two-layered bidirectional RNN with LSTMs on the
   * [LSTM](https://en.wikipedia.org/wiki/Long_short-term_memory):An RNN composed of LSTM units is often called an LSTM network. A common LSTM unit is composed of a cell, an input gate, an output gate and a forget gate. The cell remembers values over arbitrary time intervals and the three gates regulate the flow of information into and out of the cell.This [article](http://colah.github.io/posts/2015-08-Understanding-LSTMs/) can help you better understand LSTM
 ![LSTM model](http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/LSTM3-chain.png)
 * [Attention Model](https://blog.heuritech.com/2016/01/20/attention-mechanism/)
-
-it proposed as a solution to the limitation of the Encoder-Decoder model encoding the input sequence to one fixed length vector from which to decode each output time step. It is proposed as a solution to the limitation of the Encoder-Decoder model encoding the input sequence to one fixed length vector from which to decode each output time step.
+  * it proposed as a solution to the limitation of the Encoder-Decoder model encoding the input sequence to one fixed length vector from which to decode each output time step. It is proposed as a solution to the limitation of the Encoder-Decoder model encoding the input sequence to one fixed length vector from which to decode each output time step.
 ![attention layer](https://github.com/DeepsMoseli/Bidirectiona-LSTM-for-text-summarization-/raw/master/BiEnDeLstmAttention.jpg)
 
 #### Dataset
-we use the reviews written about fine foods sold on Amazon. This dataset contains above 500,000 reviews, and is hosted on [Kaggle](https://www.kaggle.com/snap/amazon-fine-food-reviews/data)
+* we use the reviews written about fine foods sold on Amazon. This dataset contains above 500,000 reviews, and is hosted on [Kaggle](https://www.kaggle.com/snap/amazon-fine-food-reviews/data)
 
 #### Usage
 
