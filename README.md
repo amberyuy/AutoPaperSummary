@@ -21,11 +21,13 @@ The Classic PageRank algorithm workflow is as below:
 * Files/Functions:
   * Summary.py: You can run this code to get the extracted-sentences and key-words.
   * textrank.py: The code of textrank.
+  * setup.py：the environment should be set
   * textrank.extract_sentences() is used to get summary of the file
   * textrank.extract_key_phrases() is used to get keywords of the file
 * Pre-req
   * install python3
   * install TensorFlow1.10,numpy,pandas,nltk
+  * install editdistance
 
 
 ### Abstractive Summarization
@@ -58,4 +60,6 @@ To build our model,we will use a two-layered bidirectional RNN with LSTMs on the
 * we use the reviews written about fine foods sold on Amazon. This dataset contains above 500,000 reviews, and is hosted on [Kaggle](https://www.kaggle.com/snap/amazon-fine-food-reviews/data)
 
 #### Usage
+* Files/Functions:
+  * 
 
