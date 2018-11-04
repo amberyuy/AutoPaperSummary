@@ -18,15 +18,14 @@ The Classic PageRank algorithm workflow is as below:
 ![PageRank](https://github.com/icoxfog417/awesome-text-summarization/raw/master/images/page_rank.png)
 
 #### Usage
-* Files:
-  * Summary.py: The code of TextRank,you can run this code to test.
+* Files/Functions:
+  * Summary.py: You can run this code to get the extracted-sentences and key-words.
+  * textrank.py: The code of textrank.
   * textrank.extract_sentences() is used to get summary of the file
   * textrank.extract_key_phrases() is used to get keywords of the file
 * Pre-req
   * install python3
   * install TensorFlow1.10,numpy,pandas,nltk
-
-
 
 
 ### Abstractive Summarization
