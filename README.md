@@ -61,5 +61,10 @@ To build our model,we will use a two-layered bidirectional RNN with LSTMs on the
 
 #### Usage
 * Files/Functions:
-  * 
+  * summarize_reviews.ipynb：the whole jupyter file to do the review summary
+  
+* Pre-req:
+  * install python3
+  * install TensorFlow1.10,
+  * install numpy,nltk
 
