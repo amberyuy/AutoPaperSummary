@@ -19,15 +19,25 @@ The Classic PageRank algorithm workflow is as below:
 
 #### Usage
 * Files/Functions:
-  * Summary.py: You can run this code to get the extracted-sentences and key-words.
+  * Summary.py: The code to get the extracted-sentences and key-words.
   * textrank.py: The code of textrank.
   * setup.py：the environment should be set
   * textrank.extract_sentences() is used to get summary of the file
   * textrank.extract_key_phrases() is used to get keywords of the file
-* Pre-req
+* Setting Environment
   * install python3
-  * install TensorFlow1.10,numpy,pandas,nltk
-  * install editdistance
+  * install TensorFlow1.10,numpy,pandas,nltk,editdistance OR run the setup.py(Alternatively, if you have access to pip you may install the library directly from github:)
+  ```
+  pip install git+git://github.com/davidadamojr/TextRank.git
+  ```
+* How to run
+  * Put the text in the article folder
+  * Run in Terminal
+  ```
+  textrank extract_summary <filename>
+  ```
+
+
 
 
 ### Abstractive Summarization
