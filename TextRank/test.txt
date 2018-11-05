@@ -1,0 +1,7 @@
+The readme is very short. I think they can write some details about theircode, such as why they chose those modules to preprocess the dataset, how to run the code and how to set the environment. I think a more detailed readme can help some persons like me who only know a little about data processing.
+
+I also found they imported a lot of module but didn’t use them, and their code has some ambiguous functions like timer. I know that maybe they will use these things in sprint 3. But I think commenting or deleting these things can make their code more concise and readable.
+
+After running their code, I saw the outcome of images and found that the target plants are the similar color as the background.  I wonder if this color similarity will affect how plants are identified and classified later. 
+
+In their sprint 2 slide, I found that they have very detailed and comprehensive training procedures and they said they’ll first train a simple model of MINIST. I really want to see the code about training MINIST, but I didn’t see the code.
