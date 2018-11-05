@@ -68,3 +68,5 @@ To build our model,we will use a two-layered bidirectional RNN with LSTMs on the
   * install TensorFlow1.10,
   * install numpy,nltk
 
+* Current results
+  * we train it by GPU and then add train outcome to this repository, so you can try to change file path and only run the last step of the code in summarize_reviews.ipynb. But I have to say the outcome is not very satisfactory, so we are changing the model's parameters and improving it.
