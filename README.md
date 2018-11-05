@@ -22,11 +22,9 @@ The Classic PageRank algorithm workflow is as below:
   * Summary.py: The code to get the extracted-sentences and key-words.
   * textrank.py: The code of textrank.
   * setup.py：the environment should be set
-  * textrank.extract_sentences() is used to get summary of the file
-  * textrank.extract_key_phrases() is used to get keywords of the file
 * Setting Environment
   * install python3
-  * install TensorFlow1.10,numpy,pandas,nltk,editdistance OR run the setup.py(Alternatively, if you have access to pip you may install the library directly from github:)
+  * install TensorFlow1.10,numpy,pandas,nltk,editdistance OR run the setup.py(Alternatively, if you have access to pip you may install the library directly from github)
   ```
   pip install git+git://github.com/davidadamojr/TextRank.git
   ```
@@ -67,16 +65,16 @@ To build our model,we will use a two-layered bidirectional RNN with LSTMs on the
 ![attention layer](https://github.com/DeepsMoseli/Bidirectiona-LSTM-for-text-summarization-/raw/master/BiEnDeLstmAttention.jpg)
 
 #### Dataset
-* we use the reviews written about fine foods sold on Amazon. This dataset contains above 500,000 reviews, and is hosted on [Kaggle](https://www.kaggle.com/snap/amazon-fine-food-reviews/data)
+* we use the reviews written about fine foods sold on Amazon. This dataset contains above 500,000 reviews, and is hosted on [Kaggle](https://www.kaggle.com/snap/amazon-fine-food-reviews/data),you can download by yourself.
 
 #### Usage
 * Files/Functions:
   * summarize_reviews.ipynb：the whole jupyter file to do the review summary
   
-* Pre-req:
+* Setting Environment:
   * install python3
   * install TensorFlow1.10,
   * install numpy,nltk
 
 * Current results
-  * We train it by GPU and then add train outcome to Google Drive,because the docunments are too big, so you can downloads them and try to change file path and only run the last step of the code in summarize_reviews.ipynb. But I have to say the outcome is not very satisfactory, so we are changing the model's parameters and improving it. [train model](https://drive.google.com/open?id=1yA4jbxyPpHEvyH7rmdyqeXkAjsyEIeOr)
+  * We train it by GPU and then add train outcome to Google Drive,because the docunments are too big, so you can download [train model](https://drive.google.com/open?id=1yA4jbxyPpHEvyH7rmdyqeXkAjsyEIeOr) and try to change file path and only run the last step of the code in summarize_reviews.ipynb. But I have to say the outcome is not very satisfactory, so we are changing the model's parameters and improving it. 
