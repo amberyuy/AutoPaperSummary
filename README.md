@@ -73,7 +73,7 @@ To build our model,we will use a two-layered bidirectional RNN with LSTMs on the
   
 * Setting Environment:
   * install python3
-  * install TensorFlow1.10,
+  * install TensorFlow1.10
   * install numpy,nltk
 
 * Current results
