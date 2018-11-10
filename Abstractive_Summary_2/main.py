@@ -26,13 +26,13 @@ summarizer.load_weights(weight_file_path=Seq2SeqSummarizer.get_weight_file_path(
 print('start predicting ...')
 for i in range(60,80):
     x = X[i]
-    actual_headline = Y[i]
-    headline = summarizer.summarize(x)
+    actual_summary = Y[i]
+    summary = summarizer.summarize(x)
     print("\n===============================================================================================================")
     print("\n===============================================================================================================")
     print('Article: ', x)
     print("Output***********************************************************************************************************")
-    print('Generated Headline: ', headline)
-    print('Original Headline: ', actual_headline)
+    print('Generated Headline: ', summary)
+    print('Original Headline: ', actual_summary)
 
-#79
+
