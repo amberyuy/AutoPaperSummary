@@ -82,6 +82,4 @@ To build our model,we will use a two-layered bidirectional RNN with LSTMs on the
   ## Reference
   Extractive Summarization: https://github.com/davidadamojr/TextRank 
   
-  Extractive Summarization: https://github.com/davidadamojr/TextRank
-  
   Abstractive Summarization: https://github.com/Currie32/Text-Summarization-with-Amazon-Reviews
