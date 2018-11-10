@@ -80,4 +80,5 @@ To build our model,we will use a two-layered bidirectional RNN with LSTMs on the
   * We train it by GPU and then add train outcome to Google Drive,because the docunments are too big, so you can download [train model](https://drive.google.com/open?id=1yA4jbxyPpHEvyH7rmdyqeXkAjsyEIeOr) and try to change file path and only run the last step of the code in summarize_reviews.ipynb. But I have to say the outcome is not very satisfactory, so we are changing the model's parameters and improving it. 
   
   ## Reference
-  TextRank:https://github.com/davidadamojr/TextRank
+  Extractive Summarization: https://github.com/davidadamojr/TextRank
+  Abstractive Summarization: https://github.com/Currie32/Text-Summarization-with-Amazon-Reviews
