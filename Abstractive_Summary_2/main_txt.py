@@ -19,13 +19,13 @@ summarizer = Seq2SeqSummarizer(config)
 summarizer.load_weights(weight_file_path=Seq2SeqSummarizer.get_weight_file_path(model_dir_path=model_dir_path))
 
 x = X
-#actual_headline = Y
-headline = summarizer.summarize(X)
+
+summary = summarizer.summarize(X)
 print("\n=======================================================")
 print('Article: ', x)
 print("Output------------------------------------------------")
-print('Generated Headline: ', headline)
-#print('Original Headline: ', actual_headline)
+print('Generated Headline: ', summary)
+
 
 
 file = open('result.text','w')
