@@ -9,9 +9,14 @@ data_dir_path = './demo/data' # refers to the demo/data folder
 model_dir_path = './demo/models' # refers to the demo/models folder
 
 print('loading csv file ...')
-df = pd.read_csv(data_dir_path + "/fake_or_real_news.csv")
-X = df['text']
-Y = df.title
+df = pd.read_csv(data_dir_path + "/news_summary.csv",encoding = 'cp437')
+df = df.dropna()
+df = df.drop(['date','headlines','read_more'],1)
+df = df.set_index('author')
+df = df.reset_index(drop=True)
+Y = df.text
+X = df.ctext
+
 
 config = np.load(Seq2SeqSummarizer.get_config_file_path(model_dir_path=model_dir_path)).item()
 
