@@ -64,6 +64,8 @@ To build our model,we will use a two-layered bidirectional RNN with LSTMs on the
 * [Adam Optimization](https://arxiv.org/abs/1412.6980)
   * The algorithm calculates an exponential moving average of the gradient and the squared gradient, and the parameters beta1 and beta2 control the decay rates of these moving averages.The initial value of the moving averages and beta1 and beta2 values close to 1.0 (recommended) result in a bias of moment estimates towards zero. This bias is overcome by first calculating the biased estimates before then calculating bias-corrected estimates.
 
+
+### Abstractive Summary_1
 #### Dataset
 * we use the reviews written about fine foods sold on Amazon. This dataset contains above 500,000 reviews, and is hosted on [Kaggle](https://www.kaggle.com/snap/amazon-fine-food-reviews/data),you can download by yourself.
 
@@ -79,7 +81,14 @@ To build our model,we will use a two-layered bidirectional RNN with LSTMs on the
 * Current results
   * We train it by GPU and then add train outcome to Google Drive,because the docunments are too big, so you can download [train model](https://drive.google.com/open?id=1yA4jbxyPpHEvyH7rmdyqeXkAjsyEIeOr) and try to change file path and only run the last step of the code in summarize_reviews.ipynb. But I have to say the outcome is not very satisfactory, so we are changing the model's parameters and improving it. 
   
+  
+  ### Abstractive_Summary_2
+  #### Dataset
+  * We use the news summary from Kaggle,which contains the summarized article and the complete article text which can be used for the summarization task.You can download [here](https://www.kaggle.com/sunnysai12345/news-summary)
+  
   ## Reference
   Extractive Summarization: https://github.com/davidadamojr/TextRank 
   
   Abstractive Summarization: https://github.com/Currie32/Text-Summarization-with-Amazon-Reviews
+  
+  
