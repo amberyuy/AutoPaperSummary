@@ -25,11 +25,13 @@ def main():
         x = X[i]
         actual_headline = Y[i]
         headline = summarizer.summarize(x)
-        # print('Article: ', x)
-        print('Generated news_summary: ', headline)
-        print('=======================================')
-        print('Original news_summary: ', actual_headline)
-        print(" ")
+        print ('=======================================')
+        print ('Generated news_summary: ')
+        print (headline)
+        print ('Original news_summary: ')
+        print (actual_headline)
+        print ('=======================================')
+        print (" ")
 
 
 if __name__ == '__main__':
