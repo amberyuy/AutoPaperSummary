@@ -72,7 +72,7 @@ To build our model,we will use a two-layered bidirectional RNN with LSTMs on the
 
 #### Usage
 * Files/Functions:
-  * summarize_reviews.ipynb：the whole jupyter file to do the review summary
+  * [summarize_reviews.ipynb](https://github.com/jyueling/601Project/blob/master/Abstractive%20Summarization_1/summarize_reviews.ipynb)：the whole jupyter file to do the review summary
   
 * Setting Environment:
   * install python3
@@ -85,10 +85,25 @@ To build our model,we will use a two-layered bidirectional RNN with LSTMs on the
 ### Abstractive_Summary_2
 #### Dataset
 * We use the news summary from Kaggle, which contains the summarized article and the complete article text which can be used for the summarization task. You can download [here](https://www.kaggle.com/sunnysai12345/news-summary)
+* Because of the accuracy is not good using the news-summary dataset,we find another one on Kaggle.[BBC News Summary](https://www.kaggle.com/pariza/bbc-news-summary),which contains more than 4000 articles and summaries.After downloading from website,you need to convert to csv format first.
 
-* The result of this implementation is not ideal now, we are trying to improve it.
+#### Usage
+* Files/Functions:
+  * [seq2seq_train.py](https://github.com/jyueling/601Project/blob/master/Abstractive_Summary_2/seq2seq_train.py):After setting the environment,you can run this file to train the model.You can change the dataset and epoches in this file.
+  * [seq2seq_predict.py](https://github.com/jyueling/601Project/blob/master/Abstractive_Summary_2/seq2seq_predict.py):You can run this file after training or download our trained model,it will give you several examples of the training results which includes the generated summary and the original summary.
+  * [main1sent.py](https://github.com/jyueling/601Project/blob/master/Abstractive_Summary_2/main1sent.py):You can open your own txt file to get your summary by running this file.
+  * [seq2seq.py](https://github.com/jyueling/601Project/blob/master/Abstractive_Summary_2/seq2seq.py):The model we are using,you can add layers and change the parameters in this file,
+  * [fit.py](https://github.com/jyueling/601Project/blob/master/Abstractive_Summary_2/fit.py):This file is doing the word embedding,you can change the sequence and word length before training.
   
+* Setting Environment:
+  * install python3
+  * install TensorFlow1.10
+  * install numpy
+  * install pandas
+ 
 ## Reference
+  Recent Trends in Deep Learning Based Natural Language Processing:https://arxiv.org/pdf/1708.02709.pdf
+
   Extractive Summarization: https://github.com/davidadamojr/TextRank 
   
   Abstractive Summarization1: https://github.com/Currie32/Text-Summarization-with-Amazon-Reviews
