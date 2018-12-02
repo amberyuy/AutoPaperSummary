@@ -19,9 +19,9 @@ The Classic PageRank algorithm workflow is as below:
 
 #### Usage
 * Files/Functions:
-  * Summary.py: The code to get the extracted-sentences and key-words.
-  * textrank.py: The code of textrank.
-  * setup.py：the environment should be set
+  * [Summary.py](https://github.com/jyueling/601Project/blob/master/TextRank/summary.py): The code to get the extracted-sentences and key-words.
+  * [textrank.py](https://github.com/jyueling/601Project/blob/master/TextRank/textrank.py): The code of textrank.
+  * [setup.py](https://github.com/jyueling/601Project/blob/master/TextRank/setup.py)：the environment should be set
 * Setting Environment
   * install python3
   * install TensorFlow1.10,numpy,pandas,nltk,editdistance OR run the setup.py(Alternatively, if you have access to pip you may install the library directly from github)
@@ -48,17 +48,18 @@ To build our model,we will use a two-layered bidirectional RNN with LSTMs on the
 
 #### Technology Selection
 * Word Embedding
-  * [Word2vec](https://en.wikipedia.org/wiki/Word2vec) algorithm [skipgram](http://mccormickml.com/2016/04/19/word2vec-tutorial-the-skip-gram-model/) is used for the encoder input sequence.Word2vec takes as its input a large corpus of text and produces a vector space, typically of several hundred dimensions, with each unique word in the corpus being assigned a corresponding vector in the space. Word vectors are positioned in the vector space such that words that share common contexts in the corpus are located in close proximity to one another in the space
+  * Distributional vectors or word embeddings essentially follow the distributional hypothesis, according to which words with similar meanings tend to occur in similar context. Thus, these vectors try to capture the characteristics of the neighbors of a word.Word embeddings are often used as the first data processing layer in a deep learning model.Word embeddings were revolutionized by Mikolov who proposed the [CBOW](https://iksinc.online/tag/continuous-bag-of-words-cbow/) and [skip-gram](http://mccormickml.com/2016/04/19/word2vec-tutorial-the-skip-gram-model/) models
+    * [Word2vec](https://en.wikipedia.org/wiki/Word2vec) is used for the encoder input sequence.Word2vec takes as its input a large corpus of text and produces a vector space, typically of several hundred dimensions, with each unique word in the corpus being assigned a corresponding vector in the space. Word vectors are positioned in the vector space such that words that share common contexts in the corpus are located in close proximity to one another in the space
 ![word2vec](https://github.com/DeepsMoseli/Bidirectiona-LSTM-for-text-summarization-/raw/master/skip-gram.jpg)
+    * [GloVe(Global Vectors for Word Representation）](https://nlp.stanford.edu/pubs/glove.pdf) is an unsupervised learning algorithm for obtaining vector representations for words. Training is performed on aggregated global word-word co-occurrence statistics from a corpus, and the resulting representations showcase interesting linear substructures of the word vector space.The GloVe model is trained on the non-zero entries of a global word-word co-occurrence matrix, which tabulates how frequently words co-occur with one another in a given corpus. Populating this matrix requires a single pass through the entire corpus to collect the statistics.
 
-* Encoder-Decoder With LSTM Model
-  * Encoder: The encoder is responsible for stepping through the input time steps and encoding the entire sequence into a fixed length vector called a context vector.
-  * Decoder: The decoder is responsible for stepping through the output time steps while reading from the context vector.
-  * [LSTM](https://en.wikipedia.org/wiki/Long_short-term_memory):An RNN composed of LSTM units is often called an LSTM network. A common LSTM unit is composed of a cell, an input gate, an output gate and a forget gate. The cell remembers values over arbitrary time intervals and the three gates regulate the flow of information into and out of the cell.This [article](http://colah.github.io/posts/2015-08-Understanding-LSTMs/) can help you better understand LSTM
+* LSTM Model
+  * [Recurrent Neural Network(RNN)](https://medium.com/explore-artificial-intelligence/an-introduction-to-recurrent-neural-networks-72c97bf0912):Basic RNNs are a network of neuron-like nodes organized into successive "layers", each node in a given layer is connected with a directed (one-way) connection to every other node in the next successive layer.Each node (neuron) has a time-varying real-valued activation. Each connection has a modifiable real-valued weight. Nodes are either input nodes (receiving data from outside the network), output nodes (yielding results), or hidden nodes (that modify the data en route from input to output).**However, standard RNN has the gradient vanishing or exploding problems. In order to overcome the issues, Long Short-term Memory network (LSTM) was developed and achieved superior per- formance (Hochreiter and Schmidhuber, 1997).**
+  * [Long Short-term Memory(LSTM)](https://en.wikipedia.org/wiki/Long_short-term_memory):An RNN composed of LSTM units is often called an LSTM network. A common LSTM unit is composed of **a cell, an input gate, an output gate and a forget gate.** The cell remembers values over arbitrary time intervals and the three gates regulate the flow of information into and out of the cell.This [article](http://colah.github.io/posts/2015-08-Understanding-LSTMs/) can help you better understand LSTM.**The standard LSTM cannot detect which is the important part for aspect-level sentiment classification.In order to address this issue, we propose to use an attention mechanism that can capture the key part of sentence in response to a given aspect.**
   ![LSTM](https://github.com/DeepsMoseli/Bidirectiona-LSTM-for-text-summarization-/raw/master/BiEnDeLstm_preview.jpeg)
 
 * [Attention Model](https://blog.heuritech.com/2016/01/20/attention-mechanism/)
-  * it proposed as a solution to the limitation of the Encoder-Decoder model encoding the input sequence to one fixed length vector from which to decode each output time step. It is proposed as a solution to the limitation of the Encoder-Decoder model encoding the input sequence to one fixed length vector from which to decode each output time step.
+  * it proposed as a solution to the limitation of the Encoder-Decoder model encoding the input sequence to one fixed length vector from which to decode each output time step. It is proposed as a solution to the limitation of the Encoder-Decoder model encoding the input sequence to one fixed length vector from which to decode each output time step.**The attention mechanism can concentrate on different parts of a sentence when different aspects are taken as input**
 ![attention layer](https://github.com/DeepsMoseli/Bidirectiona-LSTM-for-text-summarization-/raw/master/BiEnDeLstmAttention.jpg)
 
 * [Adam Optimization](https://arxiv.org/abs/1412.6980)
