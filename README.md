@@ -85,7 +85,7 @@ To build our model,we will use a two-layered bidirectional RNN with LSTMs on the
 ### Abstractive_Summary_2
 #### Dataset
 * We use the news summary from Kaggle, which contains the summarized article and the complete article text which can be used for the summarization task. You can download [here](https://www.kaggle.com/sunnysai12345/news-summary)
-* Because of the accuracy is not good using the news-summary dataset,we find another one on Kaggle.[BBC News Summary](https://www.kaggle.com/pariza/bbc-news-summary),which contains more than 4000 articles and summaries.After downloading from website,you need to convert to csv format first.
+* Because of the accuracy is not good using the news-summary dataset,we find another one on Kaggle.[BBC News Summary](https://www.kaggle.com/pariza/bbc-news-summary),which contains more than 4000 articles and summaries.After downloading from website,you need to convert them to csv format first.
 
 #### Usage
 * Files/Functions:
