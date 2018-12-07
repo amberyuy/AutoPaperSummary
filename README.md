@@ -103,12 +103,14 @@ To build our model,we will use a two-layered bidirectional RNN with LSTMs on the
   
 
 ### Problems we have met
-* Datasets
+* Datasets Selection
 
-    In the first month,we choose the [Amazon Food Review Datasets](https://www.kaggle.com/snap/amazon-fine-food-reviews/data),it contains many reviews from the customer.But the reviews are too short for us,and it's original summaries are only some words,so the model can't be used for long articles.  
-    In the second month,we tried to use another method to train our model.We find another dataset called [news_summary](https://www.kaggle.com/sunnysai12345/news-summary),We trained it many times using different parameters,but the results have no connection with the article and all the generated summaries seem related to "india" or "government".So we check the dataset,we found the quality of the dataset is not very good,it has many repeated contents.  
-    Finally,we decided to use the [bbc news summary](https://www.kaggle.com/pariza/bbc-news-summary) which has been used for many people.Because the dataset is .txt format,we can't use directly,so we convert them to csv format.The dataset has about 4500 datas.  
-    From this problem,we exactlt learned the importance about the dataset.
+    In the first month, we chose the [Amazon Food Review Datasets](https://www.kaggle.com/snap/amazon-fine-food-reviews/data), it contains many reviews from the customer and summary words of reviews. But the reviews are too short for us, and their original summaries are only some words, so the model can't be used for long articles.  
+    
+    In the second month, we tried to use another method to train our model. We find another dataset called [news_summary](https://www.kaggle.com/sunnysai12345/news-summary), We trained it many times using different ways and parameters, but the results have no connection with the article ,and all the generated summaries seem related to "India" or "government". So after taliking with Prof.Osama and TAs, we found the quality of the dataset is not very good, it has many repeated contents. 
+    
+    Finally, we decided to use the [bbc news summary](https://www.kaggle.com/pariza/bbc-news-summary) which has been used for many people.Because the dataset is '.txt' format, we can't use directly. So we use python to convert them to csv format.The dataset has about 4500 datas.  
+    From this problem, we learned that dataset selection is one of the most importtant thing of deep learning.
     
 * Overfitting
  
