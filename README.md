@@ -123,7 +123,7 @@ To build our model,we will use a two-layered bidirectional RNN with LSTMs on the
 * Overfitting
  
 ## Reference
-  Recent Trends in Deep Learning Based Natural Language Processing:https://arxiv.org/pdf/1708.02709.pdf
+  Recent Trends in Deep Learning Based Natural Language Processing: https://arxiv.org/pdf/1708.02709.pdf
 
   Extractive Summarization: https://github.com/davidadamojr/TextRank 
   
