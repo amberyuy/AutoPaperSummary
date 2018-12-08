@@ -24,7 +24,7 @@ The Classic PageRank algorithm workflow is as below:
   * [setup.py](https://github.com/jyueling/601Project/blob/master/TextRank/setup.py)：the environment should be set
 * Setting Environment
   * install python3
-  * install TensorFlow1.10,numpy,pandas,nltk,editdistance OR run the setup.py(Alternatively, if you have access to pip you may install the library directly from github)
+  * install TensorFlow1.10,numpy,pandas,nltk,editdistance OR run the setup.py (Alternatively, if you have access to pip you may install the library directly from github)
   ```
   pip install git+git://github.com/davidadamojr/TextRank.git
   ```
