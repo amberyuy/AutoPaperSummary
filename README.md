@@ -129,5 +129,7 @@ To build our model,we will use a two-layered bidirectional RNN with LSTMs on the
   
   Abstractive Summarization1: https://github.com/Currie32/Text-Summarization-with-Amazon-Reviews
   
-  Stanford CoreNLP – Natural language software: https://stanfordnlp.github.io/CoreNLP/, https://nlp.stanford.edu/software/openie.html#About
+  Stanford CoreNLP: https://stanfordnlp.github.io/CoreNLP/, https://nlp.stanford.edu/software/openie.html#About
+  
+  Recent Trends in Deep Learning Based Natural Language Processing: https://arxiv.org/pdf/1708.02709.pdf
   
