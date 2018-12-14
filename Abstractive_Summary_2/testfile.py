@@ -1,5 +1,3 @@
-#!/usr/bin/python
-from __future__ import print_function
 
 import pandas as pd
 from train import Seq_to_Seq
