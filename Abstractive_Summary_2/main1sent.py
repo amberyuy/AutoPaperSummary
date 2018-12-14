@@ -2,32 +2,29 @@
 from __future__ import print_function
 
 import pandas as pd
-from keras_text_summarization.library.seq2seq import Seq2SeqSummarizer
+from train import Seq_to_Seq
 import numpy as np
 
 np.random.seed(42)
-data_dir_path = './data' # refers to the demo/data folder
-model_dir_path = './models' # refers to the demo/models folder
+data_dir_path = './data'
+model_dir_path = './models' 
 
-with open('./upload/predict.txt', 'r') as myfile:
+with open('./predict.txt', 'r') as myfile:
   X = myfile.read()
 
+process = np.load(Seq_to_Seq.get_config_file_path(model_dir_path=model_dir_path)).item()
 
-
-config = np.load(Seq2SeqSummarizer.get_config_file_path(model_dir_path=model_dir_path)).item()
-
-summarizer = Seq2SeqSummarizer(config)
-summarizer.load_weights(weight_file_path=Seq2SeqSummarizer.get_weight_file_path(model_dir_path=model_dir_path))
-
+summarizer = Seq_to_Seq(process)
+summarizer.load_weights(weight_file_path=Seq_to_Seq.get_weight_file_path(model_dir_path=model_dir_path))
 x = X
-#actual_headline = Y
-headline = summarizer.summarize(X)
-print("\n=======================================================")
+summary = summarizer.summarize(X)
+with open('result.txt','w') as wf:
+  file.write(summary)
+
+
+print("=======================================================")
 print('Article: ', x)
-print("Output------------------------------------------------")
-print('Generated Headline: ', headline)
-print('Original Headline: ', actual_headline)
+print("=======================================================")
+print('Generated Summary: ', summary)
 
 
-file = open('result.txt','w')
-file.write(headline)
